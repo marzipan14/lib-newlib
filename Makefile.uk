@@ -99,14 +99,11 @@ CXXFLAGS-$(CONFIG_LIBNEWLIBC) += $(LIBNEWLIB_GLOBAL_FLAGS-y)
 
 # Suppress some warnings to make the build process look neater
 LIBNEWLIB_SUPPRESS_FLAGS-y += \
--Wno-unused-parameter -Wno-unused-variable -Wno-nonnull				\
--Wno-unused-but-set-variable -Wno-unused-label 					\
+-Wno-unused-parameter -Wno-unused-variable -Wno-nonnull -Wno-unused-label 	\
 -Wno-unused-function -Wno-missing-field-initializers -Wno-uninitialized		\
--Wno-array-bounds -Wno-maybe-uninitialized -Wno-pointer-sign -Wno-unused-value	\
--Wno-unused-macros -Wno-parentheses -Wno-implicit-function-declaration		\
--Wno-missing-braces -Wno-endif-labels -Wno-unused-but-set-variable		\
--Wno-type-limits -Wno-sign-compare
-LIBNEWLIB_SUPPRESS_FLAGS-$(call gcc_version_ge,6,0) += -Wno-misleading-indentation
+-Wno-array-bounds -Wno-pointer-sign -Wno-unused-value -Wno-unused-macros	\
+-Wno-parentheses -Wno-implicit-function-declaration -Wno-missing-braces		\
+-Wno-endif-labels -Wno-type-limits -Wno-sign-compare
 LIBNEWLIB_SUPPRESS_FLAGS-$(call gcc_version_ge,6,0) += -Wno-shift-negative-value
 LIBNEWLIB_SUPPRESS_FLAGS-$(call gcc_version_ge,7,0) += -Wno-implicit-fallthrough
 
